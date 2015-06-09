@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131023112646) do
+ActiveRecord::Schema.define(version: 20150609065857) do
 
   create_table "uploads", force: true do |t|
     t.datetime "created_at"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20131023112646) do
     t.string   "uploaded_file_content_type"
     t.integer  "uploaded_file_file_size"
     t.datetime "uploaded_file_updated_at"
+    t.string   "name"
+    t.integer  "price"
   end
 
 end

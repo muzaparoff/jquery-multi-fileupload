@@ -4,7 +4,7 @@ class UploadsController < ApplicationController
   # GET /uploads
   # GET /uploads.json
   def index
-    @uploads = Upload.all
+    @uploads = Upload.all.order("created_at DESC")
   end
 
   # GET /uploads/1
@@ -59,6 +59,6 @@ class UploadsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def upload_params
-      params[:upload].permit(:uploaded_file)
+      params[:upload].permit(:uploaded_file, :name, :price)
     end
 end

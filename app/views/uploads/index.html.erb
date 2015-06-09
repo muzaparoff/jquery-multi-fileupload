@@ -1,25 +1,20 @@
 <h1>Listing uploads</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @uploads.each do |upload| %>
-      <tr>
-        <td><%= link_to 'Show', upload %></td>
-        <td><%= link_to 'Edit', edit_upload_path(upload) %></td>
-        <td><%= link_to 'Destroy', upload, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Upload', new_upload_path %>
+<% @uploads.each do |upload| %>
+  <div class="row" id="recipe_top">
+    <div class="col-md-8">
+      <h2><%= link_to upload.name, upload %></h2>
+      <p>
+        <% if upload.uploaded_file.exists? %>
+          <%= image_tag upload.uploaded_file.url(:medium) %><br/>
+        <% end %>
+      </p>
+      <p><%= "#{time_ago_in_words(upload.created_at)} ago" %></p>
+      <p><%= upload.price %></p>
+      <br>
+      <%= link_to 'Show', upload, class: "btn btn-default"  %>
+      <%= link_to 'Edit', edit_upload_path(upload), class: "btn btn-default"  %>
+      <%= link_to 'Destroy', upload, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default"  %>
+    </div>
+  </div>
+<% end %>
