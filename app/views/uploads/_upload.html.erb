@@ -1,1 +1,13 @@
-<%= image_tag(@upload.uploaded_file(:small), class: 'thumb')  %>
+<p>
+  <strong>Title:</strong>
+  <%= @upload.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @upload.price %>
+</p>
+
+<% if @upload.uploaded_file.exists? %>
+  <%= image_tag(@upload.uploaded_file(:small), class: 'thumb')  %>
+<% end %>

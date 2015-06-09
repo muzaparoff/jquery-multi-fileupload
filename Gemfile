@@ -18,3 +18,4 @@ end
 gem 'paperclip'
 gem 'therubyracer'
 gem 'jquery-fileupload-rails'
+gem 'aws-sdk'
