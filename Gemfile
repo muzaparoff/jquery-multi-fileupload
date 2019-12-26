@@ -10,6 +10,7 @@ gem 'bootstrap-sass', '~> 3.3.0'
 gem 'jquery-turbolinks', '~> 2.1.0'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.2'
+gem "rack", ">= 1.6.12"
 
 group :doc do
   gem 'sdoc', require: false
